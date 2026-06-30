@@ -2,14 +2,16 @@ services:
   - type: web
     name: skinwise-api
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && alembic upgrade head
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
-        sync: false        # set manually in Render dashboard
+        sync: false
       - key: SECRET_KEY
-        sync: false        # set manually in Render dashboard
+        sync: false
       - key: ALGORITHM
         value: HS256
       - key: ACCESS_TOKEN_EXPIRE_MINUTES
         value: "10080"
+      - key: ALLOWED_ORIGINS
+        sync: false
