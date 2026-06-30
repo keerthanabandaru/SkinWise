@@ -1,13 +1,13 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useState } from 'react'
 
-const CompareContext = createContext(null)
+export const CompareContext = createContext(null)
 
 export function CompareProvider({ children }) {
   const [compareList, setCompareList] = useState([])
 
   const addToCompare = (product) => {
-    if (compareList.length >= 3) return // max 3
-    if (compareList.find((p) => p.id === product.id)) return // already added
+    if (compareList.length >= 3) return
+    if (compareList.find((p) => p.id === product.id)) return
     setCompareList((prev) => [...prev, product])
   }
 
@@ -26,8 +26,5 @@ export function CompareProvider({ children }) {
   )
 }
 
-export const useCompare = () => {
-  const ctx = useContext(CompareContext)
-  if (!ctx) throw new Error('useCompare must be inside CompareProvider')
-  return ctx
-}
+// Re-export hook here so imports from this file keep working
+export { useCompare } from '../hooks/useCompare'

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
-import { Menu, X, Sparkles, User, LogOut, LayoutDashboard, ChevronDown } from 'lucide-react'
+import { Menu, X, User, LogOut, LayoutDashboard, ChevronDown } from 'lucide-react'
+import Logo from '../ui/Logo'
 
 const navLinks = [
   { to: '/quiz',            label: 'Skin Quiz' },
@@ -56,12 +57,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* ── Logo ── */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-sm">
-              <Sparkles size={16} className="text-white" />
-            </div>
+          <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
+            <Logo size={34} />
             <span className="text-lg font-bold text-slate-900 tracking-tight">
-              SkinWise<span className="text-blue-500"> AI</span>
+              Skin<span className="text-blue-500">Wise</span>
             </span>
           </Link>
 

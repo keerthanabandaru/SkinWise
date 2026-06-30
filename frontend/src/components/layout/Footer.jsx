@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Sparkles, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import Logo from '../ui/Logo'
 
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,10 +27,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                <Sparkles size={15} className="text-white" />
-              </div>
-              <span className="text-white font-bold text-lg">SkinWise AI</span>
+              <Logo size={30} />
+              <span className="text-white font-bold text-lg">SkinWise</span>
             </div>
             <p className="text-sm leading-relaxed mb-5 text-slate-400">
               Science-backed skincare for every Indian skin type. Personalised routines, ingredient education, and India-first product recommendations.
@@ -103,7 +102,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-          <p>© 2025 SkinWise AI. All rights reserved. Made with ❤️ in India 🇮🇳</p>
+          <p>© 2025 SkinWise. All rights reserved. Made with ❤️ in India 🇮🇳</p>
           <p className="text-center">Not a substitute for medical advice. Consult a dermatologist for skin conditions.</p>
         </div>
       </div>

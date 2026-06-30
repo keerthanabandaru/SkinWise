@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { Eye, EyeOff, Sparkles, ArrowRight, Loader } from 'lucide-react'
+import { Eye, EyeOff, ArrowRight, Loader } from 'lucide-react'
+import Logo from '../components/ui/Logo'
 
 export default function Login() {
   const { login } = useAuth()
@@ -55,12 +56,9 @@ export default function Login() {
       {/* Right panel — form */}
       <div className="flex-1 flex items-center justify-center px-6 py-12 bg-slate-50">
         <div className="w-full max-w-md">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 mb-8">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow">
-              <Sparkles size={18} className="text-white" />
-            </div>
-            <span className="text-xl font-bold text-slate-900">SkinWise <span className="text-blue-500">AI</span></span>
+            <Logo size={36} />
+            <span className="text-xl font-bold text-slate-900">Skin<span className="text-blue-500">Wise</span></span>
           </Link>
 
           <h1 className="text-3xl font-extrabold text-slate-900 mb-1">Sign in</h1>
